@@ -1,13 +1,9 @@
+// +build darwin
+
 package raw
 
-import "syscall"
-
-const (
-	getTermios = syscall.TIOCGETA
-	setTermios = syscall.TIOCSETA
-)
-
 // Termios holds the TTY attributes. See man termios(4).
+// Tested on darwin/386, darwin/amd64. See termios_32.go for others.
 type Termios struct {
 	Iflag  uint64
 	Oflag  uint64

@@ -1,13 +1,11 @@
+// +build linux freebsd
+
 package raw
 
-import "syscall"
-
-const (
-	getTermios = syscall.TIOCGETA
-	setTermios = syscall.TIOCSETA
-)
-
 // Termios holds the TTY attributes. See man termios(4).
+// Tested on linux386, linux/arm, linux/amd64,
+//           freebsd/386, freebsd/arm, freebsd/amd64.
+// See tremios_64.go for darwin.
 type Termios struct {
 	Iflag  uint32
 	Oflag  uint32
