@@ -1,4 +1,4 @@
-// +build darwin freebsd dragonfly
+// +build darwin freebsd dragonfly openbsd netbsd
 
 package raw
 
